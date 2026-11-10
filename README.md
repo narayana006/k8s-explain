@@ -1,14 +1,30 @@
 # k8s-explain
 
-> Pipe kubectl output in, get a plain-English diagnosis, likely fix and verification commands out.
+Pipe kubectl output in, get a plain-English diagnosis, likely fix and verification commands out.
 
-**Status:** 🚧 Early stage — design and roadmap published, implementation in progress. Stars, issues and ideas welcome.
+> **Project status: planning. There is no working code in this repository yet.**
+> This README describes what the project will do. Nothing below can be installed or run today.
+> Features are ticked off in the checklist as they are built.
 
-## Why
+## What it is
 
-Kubernetes errors are cryptic and debugging them depends on tribal knowledge.
+A command-line tool.
+
+**The problem it solves:** Kubernetes errors are cryptic and debugging them depends on tribal knowledge.
+
+## Who it is for
+
+Anyone debugging a Kubernetes workload who wants a quick, readable diagnosis.
+
+## How it will work
+
+1. You pipe the output of kubectl describe, events or logs into the tool.
+2. It explains in plain English what is wrong and the most likely cause.
+3. It suggests a fix and the commands to confirm it; the tool itself never changes your cluster.
 
 ## Planned features
+
+Unticked items are not built yet.
 
 - [ ] Reads kubectl describe, events and logs from stdin
 - [ ] Plain-English diagnosis
@@ -16,24 +32,17 @@ Kubernetes errors are cryptic and debugging them depends on tribal knowledge.
 - [ ] Verification steps
 - [ ] Read-only by design
 
-## Intended usage
+## Planned usage
 
-```
+This is the intended interface, shown so you can judge the design. **It does not work yet**, and names may change before the first release.
+
+```bash
 kubectl describe pod api-7d9f | k8s-explain
 ```
 
-_The interface above is the target design and may change._
-
-## Roadmap
-
-1. Core implementation of the first feature set
-2. Examples and tests
-3. CI and first tagged release
-4. Docs and integrations
-
 ## Contributing
 
-Contributions are welcome. Open an issue to discuss an idea or pick an unchecked item from the feature list.
+Feedback on the design is the most useful contribution right now. Open an issue to suggest a feature, question an approach or describe your use case. Code contributions are welcome once the first version lands.
 
 ## License
 

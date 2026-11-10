@@ -1,0 +1,7 @@
+LAST SEEN   TYPE      REASON        OBJECT                          MESSAGE
+14m         Normal    Scheduled     pod/checkout-6b8d9c7f5d-p4w8z   Successfully assigned shop/checkout-6b8d9c7f5d-p4w8z to worker-3
+12m         Warning   FailedMount   pod/checkout-6b8d9c7f5d-p4w8z   MountVolume.SetUp failed for volume "tls" : secret "checkout-tls" not found
+9m          Normal    Started       pod/checkout-6b8d9c7f5d-p4w8z   Started container checkout
+4m          Warning   Unhealthy     pod/checkout-6b8d9c7f5d-p4w8z   Readiness probe failed: Get "http://10.244.3.18:8080/ready": dial tcp 10.244.3.18:8080: connect: connection refused
+2m          Warning   Unhealthy     pod/checkout-6b8d9c7f5d-p4w8z   Liveness probe failed: HTTP probe failed with statuscode: 503
+2m          Normal    Killing       pod/checkout-6b8d9c7f5d-p4w8z   Container checkout failed liveness probe, will be restarted

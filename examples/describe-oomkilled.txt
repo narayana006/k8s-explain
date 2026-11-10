@@ -1,0 +1,47 @@
+Name:             api-7d9f5c8b46-x2k4q
+Namespace:        shop
+Priority:         0
+Service Account:  default
+Node:             worker-2/10.0.1.12
+Start Time:       Tue, 14 May 2024 14:02:11 +0000
+Labels:           app=api
+                  pod-template-hash=7d9f5c8b46
+Status:           Running
+IP:               10.244.2.31
+Controlled By:    ReplicaSet/api-7d9f5c8b46
+Containers:
+  api:
+    Container ID:   containerd://4c1f0b6f9f3f6f0a4b1c9d2e7a8b5c6d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b
+    Image:          registry.example.com/shop/api:1.8.2
+    Port:           8080/TCP
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       OOMKilled
+      Exit Code:    137
+      Started:      Tue, 14 May 2024 14:09:40 +0000
+      Finished:     Tue, 14 May 2024 14:10:02 +0000
+    Ready:          False
+    Restart Count:  6
+    Limits:
+      cpu:     500m
+      memory:  128Mi
+    Requests:
+      cpu:     100m
+      memory:  128Mi
+    Environment:
+      JAVA_OPTS:  -Xmx512m
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             False
+  ContainersReady   False
+  PodScheduled      True
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  9m                     default-scheduler  Successfully assigned shop/api-7d9f5c8b46-x2k4q to worker-2
+  Normal   Pulled     2m10s (x7 over 9m)     kubelet            Container image "registry.example.com/shop/api:1.8.2" already present on machine
+  Normal   Created    2m10s (x7 over 9m)     kubelet            Created container api
+  Normal   Started    2m9s (x7 over 9m)      kubelet            Started container api
+  Warning  BackOff    48s (x31 over 8m)      kubelet            Back-off restarting failed container api in pod api-7d9f5c8b46-x2k4q_shop(0b1e6c58-3f0a-4c55-9a55-2f5a1d0c8e11)

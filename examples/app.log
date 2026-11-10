@@ -1,0 +1,5 @@
+2024-05-14T14:00:01Z INFO  starting orders-worker version 4.2.1
+2024-05-14T14:00:01Z INFO  loading configuration from /etc/orders/config.yaml
+2024-05-14T14:00:02Z WARN  redis: dial tcp: lookup redis-master.cache on 10.96.0.10:53: no such host
+2024-05-14T14:00:04Z WARN  redis: dial tcp: lookup redis-master.cache on 10.96.0.10:53: no such host
+2024-05-14T14:00:08Z ERROR could not connect to redis after 3 attempts, exiting

@@ -1,0 +1,21 @@
+Name:             web-5c6f7d8b9-hk2lp
+Namespace:        storefront
+Node:             worker-1/10.0.1.11
+Status:           Pending
+Controlled By:    ReplicaSet/web-5c6f7d8b9
+Containers:
+  web:
+    Image:          ghcr.io/example-org/web:v2.4.0
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+Events:
+  Type     Reason     Age                  From               Message
+  ----     ------     ----                 ----               -------
+  Normal   Scheduled  3m                   default-scheduler  Successfully assigned storefront/web-5c6f7d8b9-hk2lp to worker-1
+  Normal   Pulling    90s (x4 over 3m)     kubelet            Pulling image "ghcr.io/example-org/web:v2.4.0"
+  Warning  Failed     89s (x4 over 3m)     kubelet            Failed to pull image "ghcr.io/example-org/web:v2.4.0": failed to authorize: failed to fetch anonymous token: unexpected status from GET request to https://ghcr.io/token: 401 Unauthorized
+  Warning  Failed     89s (x4 over 3m)     kubelet            Error: ErrImagePull
+  Normal   BackOff    15s (x10 over 3m)    kubelet            Back-off pulling image "ghcr.io/example-org/web:v2.4.0"
+  Warning  Failed     15s (x10 over 3m)    kubelet            Error: ImagePullBackOff

@@ -1,0 +1,19 @@
+Name:             batch-report-28594320-7xq9d
+Namespace:        analytics
+Node:             <none>
+Status:           Pending
+Controlled By:    Job/batch-report-28594320
+Containers:
+  report:
+    Image:      registry.example.com/analytics/report:3.1.0
+    Requests:
+      cpu:     4
+      memory:  16Gi
+Conditions:
+  Type           Status
+  PodScheduled   False
+Node-Selectors:  workload=batch
+Events:
+  Type     Reason            Age                From               Message
+  ----     ------            ----               ----               -------
+  Warning  FailedScheduling  2m (x3 over 12m)   default-scheduler  0/6 nodes are available: 2 Insufficient memory, 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: }, 3 node(s) didn't match Pod's node affinity/selector. preemption: 0/6 nodes are available: 2 No preemption victims found for incoming pod, 4 Preemption is not helpful for scheduling.

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "k8s-explain"
+version = "0.1.0"
+description = "Rule-based, read-only diagnosis of kubectl describe, events and log output."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Narayana Vemburaj" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+k8s-explain = "k8s_explain.cli:main"
+
+[tool.setuptools]
+packages = ["k8s_explain"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
